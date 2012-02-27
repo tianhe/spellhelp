@@ -1,0 +1,2 @@
+module AnnouncerHelper
+end

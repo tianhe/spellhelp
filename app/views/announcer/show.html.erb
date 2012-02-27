@@ -1,0 +1,29 @@
+<div id="shuffle"><%= link_to "Shuffle", shuffle_announcer_path %></div>
+<div id="wordlist_index"><%= @wordlist_index %>/<%= @wordlist_count %></div>
+<div id="word"><%= @word.spelling %></div>
+<div id="listen"><%= link_to "Pronounce", @word.pronunciation_url, target: "_blank" %></div>
+<div id="reveal"><%= link_to "Reveal", "#", id: "reveal-link" %></div>
+
+<% if @wordlist_index > 1 %>
+<div id="prev"><%= link_to "Prev", announcer_url(@wordlist_index-1) %></div>
+<% end %>
+
+<% if @wordlist_index <= @wordlist_count -1 %>
+<div id="next"><%= link_to "Next", announcer_url(@wordlist_index+1) %></div>
+<% end %>
+
+
+<%= javascript_tag do %>	
+	$("#word").hide();
+  $("#reveal").click( function(){
+  	if($("#word").hasClass("revealed")){
+  		$("#word").hide();
+  		$("#reveal-link").text("Reveal");
+  		$("#word").removeClass("revealed")
+  	}else{
+  		$("#word").show();
+  		$("#reveal-link").text("Hide");
+  		$("#word").addClass("revealed")
+  	}
+	});
+<% end %>

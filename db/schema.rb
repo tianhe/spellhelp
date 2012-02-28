@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120227041933) do
+ActiveRecord::Schema.define(:version => 20120227051933) do
 
   create_table "list_words", :force => true do |t|
     t.integer  "list_id"

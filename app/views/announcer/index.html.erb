@@ -1,1 +1,3 @@
-<%= link_to "Start Spelling!", announcer_path(1) %>
+<% @lists.each do |list| %>
+<div class="list-info"><%= link_to list.name, shuffle_announcer_path(list.id) %></div>
+<% end %>

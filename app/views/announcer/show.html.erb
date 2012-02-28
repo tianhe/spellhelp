@@ -1,4 +1,5 @@
-<div id="shuffle"><%= link_to "Shuffle", shuffle_announcer_path %></div>
+<div id="home"><%= link_to "Home", announcer_path %></div>
+<div id="shuffle"><%= link_to "Shuffle", shuffle_announcer_path(@current_list_id) %></div>
 <div id="wordlist_index"><%= @wordlist_index %>/<%= @wordlist_count %></div>
 <div id="word"><%= @word.spelling %></div>
 <div id="listen"><%= link_to "Pronounce", @word.pronunciation_url, target: "_blank" %></div>
@@ -13,7 +14,7 @@
 <% end %>
 
 
-<%= javascript_tag do %>	
+<%= javascript_tag do %>
 	$("#word").hide();
   $("#reveal").click( function(){
   	if($("#word").hasClass("revealed")){

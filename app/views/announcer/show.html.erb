@@ -10,17 +10,29 @@
   </div>
 
   <div id="footer">
-    <% if @wordlist_index > 1 %>
-    <div id="prev" class="footer-elements"><%= link_to "Prev", announcer_url(@wordlist_index-1) %></div>
-    <% end %>
 
-    <div id="listen" class="footer-elements"><%= link_to "Pronounce", @word.pronunciation_url, target: "_blank" %></div>
+    <div id="prev" class="footer-elements">
+      <% if @wordlist_index > 1 %>
+      <%= link_to "Prev", announcer_url(@wordlist_index-1) %>
+      <% end %>
+    </div>
 
-    <div id="reveal" class="footer-elements"><%= link_to "Reveal", "#", id: "reveal-link" %></div>
 
-    <% if @wordlist_index <= @wordlist_count -1 %>
-    <div id="next" class="footer-elements"><%= link_to "Next", announcer_url(@wordlist_index+1) %></div>
-    <% end %>
+    <div id="listen" class="footer-elements">
+      <%= link_to "Pronounce", @word.pronunciation_url, target: "_blank" %>
+    </div>
+
+    <div id="reveal" class="footer-elements">
+      <%= link_to "Reveal", "#", id: "reveal-link" %>
+    </div>
+
+
+    <div id="next" class="footer-elements">
+      <% if @wordlist_index <= @wordlist_count -1 %>
+        <%= link_to "Next", announcer_url(@wordlist_index+1) %>
+      <% end %>
+    </div>
+
   </div>
 </div>
 <%= javascript_tag do %>

@@ -8,6 +8,7 @@ gem 'rails', '3.1.3'
 #gem 'sqlite3'
 gem 'pg'
 gem 'thin'
+gem 'rails_admin', :git => 'git://github.com/sferik/rails_admin.git'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -31,7 +32,9 @@ gem 'jquery-rails'
 # To use debugger
 
 group :test, :development do
-  gem 'ruby-debug19', :require => 'ruby-debug'	
+  gem 'ruby-debug19', :require => 'ruby-debug'
   # Pretty printed test output
   gem 'turn', '0.8.2', :require => false
 end
+
+gem "devise"

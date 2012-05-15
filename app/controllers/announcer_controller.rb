@@ -1,4 +1,5 @@
 class AnnouncerController < ApplicationController
+  before_filter :authenticate_user!
   before_filter :current_list_id
 
   def shuffle
